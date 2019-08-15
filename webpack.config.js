@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: ['./src/index.tsx'],
+  entry: ['@babel/polyfill', './src/index.tsx'],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
