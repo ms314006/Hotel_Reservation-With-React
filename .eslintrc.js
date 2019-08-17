@@ -42,7 +42,7 @@ module.exports = {
       'max-len': ['off'],
       'no-empty-pattern': ['off'],
       'react/jsx-no-bind': ['error', {'allowBind': true, 'allowArrowFunctions': true}],
-      'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
+      'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx', '.tsx'] }],
       'jsx-a11y/no-static-element-interactions': ['off'],
       'import/extensions': ['warn', 'always'],
       "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
