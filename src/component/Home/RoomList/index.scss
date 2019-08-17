@@ -1,0 +1,26 @@
+backgroundStyle {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.28) 45%, #fff 0, #fff 50%, rgba(255, 255, 255, 0.28) 0, rgba(255, 255, 255, 0.28) 95%, #fff 0);
+  background-size:5px 5px; 
+}
+
+.roomListBlock {
+    position: relative;
+    background: #fff;
+    width: 300px;
+}
+
+.roomList::after {
+    @extend backgroundStyle;
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+    width: 280px;
+    height: 20px;
+}
+
+.list {
+    margin: 40px 0px 40px 36px;
+    font-size: 14px;
+    letter-spacing: 1.46px;
+}

@@ -1,0 +1,48 @@
+.logoBlock {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 16;
+  left: 16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 148px;
+  height: 148px;
+  background: rgba(255,255,255,0.30);
+  border: 2px solid #FFFFFF;
+  font-size: 32px;
+  color: #fff;
+}
+
+backgroundStyle {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.28) 45%, #fff 0, #fff 50%, rgba(255, 255, 255, 0.28) 0, rgba(255, 255, 255, 0.28) 95%, #fff 0);
+  background-size:5px 5px; 
+}
+
+.logo::before {
+  @extend backgroundStyle;
+  content: '';
+  position: absolute;
+  top: -16;
+  left: -16;
+  width: 148px;
+  height: 16px;
+}
+
+.logo::after {
+  @extend backgroundStyle;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -16;
+  width: 16px;
+  height: 132px;
+}
+
+.logoTextRow {
+  margin: 8px;
+}

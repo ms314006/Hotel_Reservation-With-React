@@ -1,0 +1,53 @@
+.home {
+    box-sizing: border-box;
+    padding: 52px 0px 52px 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+backgroundStyle {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.28) 45%, #fff 0, #fff 50%, rgba(255, 255, 255, 0.28) 0, rgba(255, 255, 255, 0.28) 95%, #fff 0);
+  background-size:5px 5px; 
+}
+
+.roomInfo {
+    position: relative;
+    color: #FFFFFF;
+    .roomNo {
+        font-size: 64px;
+    }
+
+    .roomNo::after {
+        @extend backgroundStyle;
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom: 28px;
+        width: 80px;
+        height: 16px;
+    }
+
+    .roomName {
+        font-size: 24px;
+    }
+}
+
+.right {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
