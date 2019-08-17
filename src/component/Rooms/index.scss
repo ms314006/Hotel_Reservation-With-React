@@ -1,0 +1,22 @@
+.roomsBlock {
+    display: grid;
+    grid-template-rows: 660px 1fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+.roomsListOutsideBlock {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.roomListInsideBlock {
+    position: absolute;
+    top: -178px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}

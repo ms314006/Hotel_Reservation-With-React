@@ -1,6 +1,7 @@
 import React, { useEffect, } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GET_ROOMS } from '../../../action/hotel';
+import { IState } from '../../../interface/IState';
 import styles from './index.scss';
 
 const List = (props: any) => {
@@ -12,8 +13,7 @@ const List = (props: any) => {
   );
 };
 
-const RoomList = (props: any) => {
-  const {} = props;
+const RoomList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: GET_ROOMS, });

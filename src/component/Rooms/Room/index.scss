@@ -1,0 +1,61 @@
+.room {
+    background: #F7F7F7;
+    box-shadow: 1px 1px 6px #bebebe;
+    width: 300px;
+    height: 350px;
+    margin: 60px 12px 0px 12px;
+}
+
+.room:hover {
+    .roomImage {
+        height: 216px;
+        transition: height 0.5s;
+    }
+    .roomDetailInfo {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+}
+
+.roomImage {
+    width: 300px;
+    height: 280px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: height 0.5s;
+}
+
+.roomInfo {
+    padding: 24px 32px;
+    font-size: 14px;
+    letter-spacing: 1.46px;
+}
+
+.roomDetailInfo {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6D7278;
+    letter-spacing: 1.25px;
+    opacity: 0;
+
+    .roomChineseName {
+        margin-top: 8px;
+        margin-bottom: 40px;
+    }
+
+    .roomPrice {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .normalDayPrice {
+            font-size: 20px;
+            letter-spacing: 2.19px;
+            color: #000;
+        }
+    }
+}
