@@ -32,6 +32,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        include: path.resolve(__dirname, './node_modules'),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          }
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: [/node_modules/],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -48,6 +61,7 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
+        exclude: [/node_modules/],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
