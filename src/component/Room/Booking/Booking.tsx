@@ -1,6 +1,7 @@
 import React from 'react';
 import Calendar from 'react-calendar';
 import moment from 'moment';
+import calendarStyle from './calendarStyle/index.css';
 import styles from './index.scss';
 
 const Booking = (props: any) => {
