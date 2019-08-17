@@ -1,0 +1,18 @@
+.roomBlock {
+    display: grid;
+    grid-template-rows: 596px 1fr;
+    height: 100%;
+}
+
+.imageBlock {
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 0px 6px #bebebe;
+}
+
+.information {
+    box-sizing: border-box;
+    padding: 66px 64px;
+    display: flex;
+    justify-content: center;
+}

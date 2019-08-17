@@ -1,0 +1,82 @@
+.roomTopBlock {
+  position: relative;
+}
+
+.backToHome {
+  position: absolute;
+  top: 44px;
+  left: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 152px;
+  height: 44px;
+  border: 1px solid;
+  font-size: 18px;
+  letter-spacing: 1.88px;
+}
+
+backgroundStyle {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, #000 0, #000 50%, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 95%, #000 0);
+  background-size: 5px 5px; 
+}
+
+.backToHome::after {
+  content: '';
+  @extend backgroundStyle;
+  position: absolute;
+  top: -8px;
+  left: -12px;
+  width: 152px;
+  height: 8px;
+}
+
+.backToHome::before {
+  content: '';
+  @extend backgroundStyle;
+  position: absolute;
+  top: 0px;
+  left: -12px;
+  width: 12px;
+  height: 32px;
+}
+
+.removeLinkStyle:link{
+  color: #000;
+  text-decoration: none;
+}
+.removeLinkStyle:visited {
+  color: #000;
+  text-decoration: none;
+}
+.removeLinkStyle:hover {
+  color: #000;
+  text-decoration: none;
+}
+.removeLinkStyle:active {
+  color: #000;
+  text-decoration: none;
+}
+
+.roomImage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+image {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bigImage {
+  @extend image;
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.smallImage {
+  @extend image;
+}

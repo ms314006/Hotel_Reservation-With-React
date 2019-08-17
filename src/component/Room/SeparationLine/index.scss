@@ -1,0 +1,10 @@
+.separationLine {
+    display: flex;
+}
+
+.border {
+    width: 16px;
+    height: 16px;
+    border-left: 1px solid #000;
+    transform:rotate(45deg);
+}
