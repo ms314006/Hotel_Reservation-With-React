@@ -15,7 +15,12 @@ const Home = () => {
       }}
     >
       <div className={styles.left}>
-        <Logo />
+        <div>
+          <Logo />
+          <div className={styles.promptText}>
+            點擊 Logo 進入網站
+          </div>
+        </div>
         <div className={styles.roomInfo}>
           <div className={styles.roomNo}>01</div>
           <div className={styles.roomName}>{currentRoom.name}</div>

@@ -4,3 +4,4 @@ export const roomInfo: string;
 export const roomNo: string;
 export const roomName: string;
 export const right: string;
+export const promptText: string;
