@@ -16,6 +16,13 @@ import { IState } from '../../../interface/IState';
 import { RESERVATION_ROOM } from '../../../action/hotel';
 import styles from './index.scss';
 
+const initState = {
+  name: '',
+  tel: '',
+  dateS: moment(new Date().addDays(1)).format('YYYY-MM-DD'),
+  dateE: moment(new Date().addDays(2)).format('YYYY-MM-DD'),
+};
+
 const useStyles = makeStyles({
   input: {
     width: 320,
@@ -44,12 +51,7 @@ const HandleBooking = (props: any) => {
   const hotel = useSelector((state: IState) => state.hotel);
   const { room: [room], } = useSelector((state: IState) => state.room);
   const reservationResult = useSelector((state: IState) => state.reservationResult);
-  const [bookingInfo, setBookingInfo] = useState({
-    name: '',
-    tel: '',
-    dateS: moment(new Date().addDays(1)).format('YYYY-MM-DD'),
-    dateE: moment(new Date().addDays(2)).format('YYYY-MM-DD'),
-  });
+  const [bookingInfo, setBookingInfo] = useState({ ...initState, });
   const [validator, setValidator] = useState({
     name: { result: false, message: '', },
     tel: { result: false, message: '', },
@@ -95,7 +97,11 @@ const HandleBooking = (props: any) => {
   };
 
   return (
-    <Dialog open={open} onClose={closeBooking} aria-labelledby="form-dialog-title">
+    <Dialog
+      open={open}
+      aria-labelledby="form-dialog-title"
+      disableBackdropClick
+    >
       <DialogTitle>預約時段</DialogTitle>
       <DialogContent>
         <div className={styles.separationLine}>
@@ -220,10 +226,13 @@ const HandleBooking = (props: any) => {
       <DialogActions>
         <div className={styles.actionButton}>
           <Button
-            onClick={closeBooking}
+            onClick={() => {
+              setBookingInfo({ ...initState, });
+              closeBooking();
+            }}
             classes={{ root: classes.closeButton, }}
           >
-            取消
+            {reservationResult.indexOf('成功') !== -1 ? '關閉視窗' : '取消預約'}
           </Button>
           <Button
             onClick={submitBooking}

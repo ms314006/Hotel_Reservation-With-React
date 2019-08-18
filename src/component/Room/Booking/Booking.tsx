@@ -4,9 +4,11 @@ import Calendar from 'react-calendar';
 import moment from 'moment';
 import HandleBooking from '../HandleBooking';
 import { IState } from '../../../interface/IState';
+import { RESERVATION_ROOM_SUCCESS } from '../../../action/hotel';
 import styles from './index.scss';
 
 const Booking = () => {
+  const dispatch = useDispatch();
   const { booking, } = useSelector((state: IState) => state.room);
   const [openBooking, setOpenBooking] = useState(false);
   const bookingClassName = ({ date, }): string => {
@@ -28,7 +30,15 @@ const Booking = () => {
         <button
           type="button"
           className={styles.bookingBtn}
-          onClick={() => { setOpenBooking(true); }}
+          onClick={() => {
+            setOpenBooking(true);
+            dispatch({
+              type: RESERVATION_ROOM_SUCCESS,
+              payload: {
+                reservationMessage: '',
+              },
+            });
+          }}
         >
           預約時段
         </button>
