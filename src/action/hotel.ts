@@ -11,10 +11,12 @@ export function* getRooms() {
   yield put({ type: GET_ROOMS_SUCCESS, payload: { items, }, });
 }
 
+export const GET_ROOM_ING = 'GET_ROOM_ING';
 export const GET_ROOM = 'GET_ROOM';
 export const GET_ROOM_SUCCESS = 'GET_ROOM_SUCCESS';
 
 export function* getRoom(param: any) {
+  yield put({ type: GET_ROOM_ING, });
   const hotel = yield select(state => state.hotel);
   const { data, } = yield call(hotel.getRoom, param.roomId);
   yield put({ type: GET_ROOM_SUCCESS, payload: { data, }, });

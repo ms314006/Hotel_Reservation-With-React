@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import Logo from '../../Logo';
 import CommunityLink from '../../Infomation/CommunityLink';
 import Infomation from '../../Infomation/Infomation';

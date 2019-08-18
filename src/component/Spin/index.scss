@@ -1,0 +1,12 @@
+.spinBlock {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+}
+
+.spin {
+    position: absolute;
+    top: 44vh;
+    left: 44vw;
+}
