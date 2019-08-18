@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import Logo from '../Logo';
 import RoomList from './RoomList';
 import HotelInfo from './HotelInfo';
@@ -7,7 +6,6 @@ import { IState } from '../../interface/IState';
 import styles from './index.scss';
 
 const Home = () => {
-  const rooms = useSelector((state: IState) => state.rooms);
   const [currentRoom, setCurrentRoom] = useState({ imageUrl: '', name: '', });
   return (
     <div
