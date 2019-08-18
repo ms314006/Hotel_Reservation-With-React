@@ -42,3 +42,25 @@ backgroundStyle {
     box-sizing: border-box;
     border: 1px solid #000;
 }
+
+.removeLinkStyle {
+  color: #000;
+  text-decoration: none;
+}
+
+.removeLinkStyle:link{
+  color: #000;
+  text-decoration: none;
+}
+.removeLinkStyle:visited {
+  color: #000;
+  text-decoration: none;
+}
+.removeLinkStyle:hover {
+  color: #000;
+  text-decoration: none;
+}
+.removeLinkStyle:active {
+  color: #000;
+  text-decoration: none;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { GET_ROOMS } from '../../../action/hotel';
 import { IState } from '../../../interface/IState';
 import styles from './index.scss';
@@ -10,20 +11,22 @@ const List = (props: any) => {
     setCurrentRoom(room);
   }, []);
   return (
-    <div
-      onBlur={() => {}}
-      onMouseMove={() => { setCurrentRoom(room); }}
-      className={styles.listBlock}
-    >
+    <Link to={`room/${room.id}`} className={styles.removeLinkStyle}>
       <div
-        className={
-          `${styles.hoverBorder} ${room.name === currentRoom.name ? styles.active : ''}`
-        }
-      />
-      <div className={styles.list}>
-        {room.name}
+        onBlur={() => {}}
+        onMouseMove={() => { setCurrentRoom(room); }}
+        className={styles.listBlock}
+      >
+        <div
+          className={
+            `${styles.hoverBorder} ${room.name === currentRoom.name ? styles.active : ''}`
+          }
+        />
+        <div className={`${styles.list} ${styles.removeLinkStyle}`}>
+          {room.name}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
