@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [path.resolve(__dirname, './node_modules'), path.resolve(__dirname, './src/component/Room/Booking/calendarStyle')],
+        include: [path.resolve(__dirname, './node_modules')],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: [/node_modules/, /calendarStyle/],
+        exclude: [/node_modules/],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
