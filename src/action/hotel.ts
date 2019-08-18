@@ -20,19 +20,18 @@ export function* getRoom(param: any) {
   yield put({ type: GET_ROOM_SUCCESS, payload: { data, }, });
 }
 
+export const RESERVATION_ROOM_ING = 'RESERVATION_ROOM_ING';
 export const RESERVATION_ROOM = 'RESERVATION_ROOM';
+export const RESERVATION_ROOM_SUCCESS = 'RESERVATION_ROOM_SUCCESS';
 
-export const reservationRoom = (
-  roomId: string, name: string, tel: string, date: string[]
-) => ({
-  type: RESERVATION_ROOM,
-  payload: {
-    roomId,
-    name,
-    tel,
-    date,
-  },
-});
+export function* reservationRoom(param: any) {
+  yield put({ type: RESERVATION_ROOM_ING, });
+  const hotel = yield select(state => state.hotel);
+  const response = yield call(hotel.reservationRoom, param.roomId, param.bookingInfo);
+  const reservationMessage = response.data ? '已成功訂房：）' : response.data.message;
+  yield put({ type: RESERVATION_ROOM_SUCCESS, payload: { reservationMessage, }, });
+  yield getRoom({ type: GET_ROOM, roomId: param.roomId, });
+}
 
 export const DELETE_ALL_RESERVATION = 'DELETE_ALL_RESERVATION';
 
@@ -43,6 +42,7 @@ export const deleteAllReservation = () => ({
 function* mySaga() {
   yield takeEvery(GET_ROOMS, getRooms);
   yield takeEvery(GET_ROOM, getRoom);
+  yield takeEvery(RESERVATION_ROOM, reservationRoom);
 }
 
 export default mySaga;

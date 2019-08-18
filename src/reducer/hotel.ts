@@ -1,6 +1,6 @@
 import * as actions from '../action/hotel';
-import { IState } from '../interface/IState';
 import Hotel from '../class/Hotel';
+import { IState } from '../interface/IState';
 
 const initState: IState = {
   rooms: [],
@@ -43,6 +43,7 @@ const initState: IState = {
     ],
     booking: [],
   },
+  reservationResult: '',
   hotel: new Hotel(),
 };
 
@@ -57,6 +58,16 @@ const reducer = (state = initState, action: any) => {
       return {
         ...state,
         room: action.payload.data,
+      };
+    case actions.RESERVATION_ROOM_ING:
+      return {
+        ...state,
+        reservationResult: '處理中，請稍候...',
+      };
+    case actions.RESERVATION_ROOM_SUCCESS:
+      return {
+        ...state,
+        reservationResult: action.payload.reservationMessage,
       };
     default:
       return state;

@@ -1,12 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import SeparationLine from '../SeparationLine';
 import bed from '../../../enum/bed';
 import provide from '../../../enum/provide';
 import provideIcon from '../../../enum/provideIcon';
+import { IState } from '../../../interface/IState';
 import styles from './index.scss';
 
-const RoomInformation = (props: any) => {
-  const { room, } = props;
+const RoomInformation = () => {
+  const { room: [room], } = useSelector((state: IState) => state.room);
   return (
     <div className={styles.information}>
       <div>
@@ -31,7 +33,7 @@ const RoomInformation = (props: any) => {
             {`${room.descriptionShort.Footage} 平方公尺`}
           </div>
         </div>
-        <div className={styles.description}>
+        <div className={styles.desscription}>
           {room.description}
         </div>
         <div className={styles.separationLine}>

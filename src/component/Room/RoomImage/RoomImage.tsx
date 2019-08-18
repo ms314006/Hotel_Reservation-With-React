@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { IState } from '../../../interface/IState';
 import styles from './index.scss';
 
-const RoomImage = (props: any) => {
-  const { imageUrl } = props;
+const RoomImage = () => {
+  const room = useSelector((state: IState) => state.room);
+  const imageUrl = [...room.room[0].imageUrl];
   return (
     <div className={styles.roomTopBlock}>
       <div className={styles.backToHome}>
